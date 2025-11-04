@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy - New Way Freight Inc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #1a1a1a;
+      --accent: #2563eb;
+      --light: #f1f5f9;
+      --border: #e2e8f0;
+      --gray: #64748b;
+      --dark-gray: #475569;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      background: white;
+      color: var(--accent);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .back-btn::before {
+      content: '←';
+      font-weight: bold;
+    }
+
+    /* Last Updated */
+    .last-updated {
+      text-align: right;
+      color: var(--gray);
+      font-size: 0.875rem;
+      margin: 0 40px 30px;
+      font-weight: 400;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 50px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    /* Title */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--text);
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    /* Section Title */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Text */
+    p {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    /* List */
+    ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    ul li {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 4px;
+      list-style: none;
+    }
+
+    ul li::before {
+      content: '•';
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: -16px;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 32px 0;
+      border-left: 4px solid var(--accent);
+    }
+
+    .contact-info h2 {
+      margin-top: 0;
+      border: none;
+      padding-bottom: 0;
+    }
+
+    /* Footer Note */
+    .footer-note {
+      font-style: italic;
+      color: var(--gray);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 15px;
+      }
+
+      .back-btn {
+        top: 16px;
+        left: 16px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      .last-updated {
+        margin: 0 20px 24px;
+        font-size: 0.8rem;
+      }
+
+      .container {
+        padding: 40px 25px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p, ul li {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      .contact-info {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn">Back</a>
+
+  <!-- Last Updated -->
+  <p class="last-updated">Last updated 11/04/2025</p>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>New Way Freight Inc Privacy Policy</h1>
+
+    <p>Welcome to New Way Freight Inc! Protecting your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you engage with our services. By using our website and services, you agree to the practices described in this policy.</p>
+
+    <p>New Way Freight Inc is committed to providing reliable freight delivery services for general cargo. This Privacy Policy explains how we handle your personal information to maintain transparency and trust.</p>
+
+    <h2>Types of Information Collected</h2>
+    <p>We collect various types of personal information from our customers. This includes:</p>
+    <ul>
+      <li>Personal identification details such as your name, address, phone number, and email address. Additionally, we may gather business-related information, including your company name, billing information, and shipping preferences. We also collect website usage data, such as IP addresses, browser types, cookies, and activity logs.</li>
+    </ul>
+
+    <h2>Method of Information Collection</h2>
+    <p>We collect your personal information through several means:</p>
+    <ul>
+      <li>Direct interactions, such as when you contact us via phone, email, or by filling out forms on our website. We also gather transactional data during the booking, invoicing, or delivery of services. Furthermore, cookies and analytics tools are used to monitor website usage and improve your browsing experience.</li>
+    </ul>
+
+    <h2>Purpose of Data Collection</h2>
+    <p>The data we collect is used to:</p>
+    <ul>
+      <li>Facilitate freight bookings and deliveries, communicate updates about shipments or services, enhance our service offerings, and comply with legal and security requirements.</li>
+    </ul>
+    <p>
+      Messaging frequency may vary.<br>
+      Message and data rates may apply.<br>
+      To opt out at any time, text STOP.<br>
+      For assistance, text HELP or visit our website.
+    </p>
+
+    <h2>Data Security Measures</h2>
+    <p>The security of your personal information is our priority. We:</p>
+    <ul>
+      <li>Use encryption methods to protect data transmission and storage, implement access controls to prevent unauthorized access, and conduct regular security audits to maintain system integrity and prevent misuse.</li>
+    </ul>
+
+    <h2>Data Sharing</h2>
+    <p>Phone numbers collected with SMS consent will not be sold, rented, or shared with third parties or affiliates for marketing purposes under any circumstances.</p>
+
+    <h2>User Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you. If necessary, you may update or correct inaccuracies in your information or request the deletion of your data, subject to legal obligations. You also have the option to opt out of marketing communications at any time. For assistance with these rights, please reach out to us.</li>
+    </ul>
+
+    <h2>SMS Communication</h2>
+    <p>The information (Phone Number) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes. If you have consented to receive text messages from "New Way Freight Inc", you may receive messages related to the following: Pick Up Times, Delivery ETA's, Appointment and Safety Reminders.</p>
+    <p>Message frequency may vary depending on the type of communication. For example, you may receive up to [5-15] SMS messages per week related to your appointments and reminders. Please note that standard message and data rates may apply, depending on your carrier’s pricing plan. These fees may vary if the message is sent domestically or internationally.</p>
+    <p>You may opt-in to receive SMS messages from "New Way Freight Inc" by submitting our online contact form. You can opt out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list. If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly by calling our contact number. If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.</p>
+    <p><strong>Standard Messaging Disclosures:</strong></p>
+    <p>
+      Message and data rates may apply.<br>
+      You can opt out at any time by texting "STOP."<br>
+      For assistance, text "HELP" or visit our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a> pages.<br>
+      Message frequency may vary.
+    </p>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy, please contact us using the form on our website. Thank you.</p>
+    </div>
+
+    <p class="footer-note">
+      We may update this Privacy Policy periodically to reflect changes in our practices or comply with legal requirements. Please review this document regularly for updates.
+    </p>
+  </div>
+
+</body>
+</html>

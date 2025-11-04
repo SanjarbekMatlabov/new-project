@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions - New Way Freight Inc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #1a1a1a;
+      --accent: #2563eb;
+      --light: #f1f5f9;
+      --border: #e2e8f0;
+      --gray: #64748b;
+      --dark-gray: #475569;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      background: white;
+      color: var(--accent);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .back-btn::before {
+      font-weight: bold;
+    }
+
+    /* Last Updated */
+    .last-updated {
+      text-align: right;
+      color: var(--gray);
+      font-size: 0.875rem;
+      margin: 0 40px 30px;
+      font-weight: 400;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 50px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    /* Title */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--text);
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    /* Section Title */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Text */
+    p {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    /* List */
+    ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    ul li {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 4px;
+      list-style: none;
+    }
+
+    ul li::before {
+      content: '•';
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: -16px;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 32px 0;
+      border-left: 4px solid var(--accent);
+    }
+
+    .contact-info h2 {
+      margin-top: 0;
+      border: none;
+      padding-bottom: 0;
+    }
+
+    /* Footer Note */
+    .footer-note {
+      font-style: italic;
+      color: var(--gray);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 15px;
+      }
+
+      .back-btn {
+        top: 16px;
+        left: 16px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      .last-updated {
+        margin: 0 20px 24px;
+        font-size: 0.8rem;
+      }
+
+      .container {
+        padding: 40px 25px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p, ul li {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      .contact-info {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn">Back</a>
+
+  <!-- Last Updated -->
+  <p class="last-updated">Last updated 03/25/2025</p>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Terms & Conditions</h1>
+
+    <p>Welcome to Unlimited Express Inc. These Terms and Conditions outline the rules and regulations for using our services and website. By accessing our services, you agree to comply with these terms. If you do not agree with any part of these terms, please refrain from using our services. These Terms and Conditions govern the use of the services provided by Unlimited Express Inc, including freight delivery and access to our website. By engaging with our services, you agree to abide by these terms.</p>
+
+    <h2>Scope of Services</h2>
+    <p>Our company specializes in transporting general freight across the United States. We work with owner-operators to fulfill transportation needs and provide dispatch services to coordinate and secure freight loads. The terms outlined here apply to all aspects of our service delivery, including booking, dispatch, and communications. Any special arrangements outside the scope of standard services must be agreed upon in writing.</p>
+
+    <h2>Owner-Operator Obligations</h2>
+    <p>Owner-operators are independent contractors responsible for maintaining their vehicles, securing required licenses, and ensuring compliance with all federal, state, and local transportation laws. They must carry the necessary insurance for liability, cargo, and property damage as specified in their agreements with Unlimited Express Inc. Failure to meet these obligations may result in termination of the contractual relationship.</p>
+
+    <h2>Dispatch Services</h2>
+    <p>Our dispatch services include finding and coordinating loads for owner-operators, facilitating communication with brokers and shippers, and providing support during the transportation process. Dispatch services are provided under a separate agreement that outlines fees, responsibilities, and terms specific to these services.</p>
+
+    <h2>Limitations of Liability</h2>
+    <p>While we strive to ensure timely and secure delivery, Unlimited Express Inc is not responsible for delays, losses, or damages caused by factors outside our control, such as natural disasters, accidents, or third-party interference. For owner-operators, liability for cargo or damages is governed by their independent agreements and insurance coverage.</p>
+
+    <h2>Data and Privacy</h2>
+    <p>By using our services, you consent to the collection and use of your personal and business information as outlined in our Privacy Policy. We prioritize the security of your data and comply with applicable data protection laws.</p>
+    <p>
+      Messaging frequency may vary.<br>
+      Message and data rates may apply.<br>
+      To opt out at any time, text STOP.<br>
+      For assistance, text HELP or visit our website.
+    </p>
+
+    <h2>Prohibited Uses</h2>
+    <p>Our services and website may not be used for illegal or unauthorized purposes. Customers, owner-operators, and other users are prohibited from engaging in fraudulent activities, attempting to breach the security of our systems, or participating in actions that disrupt our operations.</p>
+
+    <h2>Data Sharing</h2>
+    <p>Phone numbers collected with SMS consent will not be sold, rented, or shared with third parties or affiliates for marketing purposes under any circumstances.</p>
+
+    <h2>SMS Communication</h2>
+    <p>The information (Phone Number) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes. If you have consented to receive text messages from "Unlimited Express Inc", you may receive messages related to the following: Pick Up Times, Delivery ETA's, Appointment and Safety Reminders.</p>
+    <p>Message frequency may vary depending on the type of communication. For example, you may receive up to [5-15] SMS messages per week related to your appointments and reminders. Please note that standard message and data rates may apply, depending on your carrier’s pricing plan. These fees may vary if the message is sent domestically or internationally.</p>
+    <p>You may opt-in to receive SMS messages from "Unlimited Express Inc" by submitting our online contact form. You can opt out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list. If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly by calling our contact number. If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.</p>
+    <p><strong>Standard Messaging Disclosures:</strong></p>
+    <p>
+      Message and data rates may apply.<br>
+      You can opt out at any time by texting "STOP."<br>
+      For assistance, text "HELP" or visit our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a> pages.<br>
+      Message frequency may vary.
+    </p>
+
+    <h2>Termination of Services</h2>
+    <p>We reserve the right to terminate or suspend access to our services at any time without notice if you violate these Terms and Conditions or engage in activities deemed harmful to our company or other customers. Owner-operator agreements may also be terminated for non-compliance or breach of contract.</p>
+
+    <h2>Changes to Terms and Conditions</h2>
+    <p>Unlimited Express Inc reserves the right to modify these Terms and Conditions at any time. Any changes will be communicated through updates on our website. Continued use of our services following updates constitutes acceptance of the revised terms.</p>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>If you have any questions or concerns regarding these Terms and Conditions, please fill out our contact form.</p>
+    </div>
+
+    <p class="footer-note">
+      We may update these Terms and Conditions periodically. Please review this document regularly for updates.
+    </p>
+  </div>
+
+</body>
+</html>

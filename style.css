@@ -1,0 +1,838 @@
+/* ===== GLOBAL STYLES & VARIABLES ===== */
+:root {
+    --font-family: 'Poppins', sans-serif;
+    
+    /* Light Mode Palette */
+    --bg-light: #F9FAFB;      /* Asosiy fon (Yumshoq oq) */
+    --bg-card: #FFFFFF;       /* Kartalar foni (Toza oq) */
+    --text-primary: #111827;  /* Asosiy matn (To'q kulrang) */
+    --text-secondary: #6B7280;/* Ikkilamchi matn (O'rta kulrang) */
+    
+    /* Yagona, hammaga yoqadigan aksent */
+    --accent-color: #3B82F6; /* Professional ko'k rang */
+    --accent-color-hover: #2563EB; /* biroz to'qroq ko'k */
+
+    --card-border: 1px solid #E5E7EB; /* Ochiq kulrang chegara */
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Juda yengil soya */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ===== NAVIGATSIYA PANELI ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--bg-card); /* Oq fon */
+    border-bottom: var(--card-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Navbar uchun soya */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: var(--accent-color);
+    color: var(--bg-card) !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--accent-color-hover);
+    color: var(--bg-card) !important;
+    transform: scale(1.05);
+}
+
+.nav-btn::after {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary); /* Gamburger belgisi qora */
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+
+/* ===== ASOSIY BO'LIM (HERO) ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('./assets/background.png') no-repeat center center/cover;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #FFFFFF; 
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--accent-color); 
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #E5E7EB; 
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--accent-color);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: var(--text-primary);
+}
+
+.btn-primary:hover {
+    background: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background: #FFFFFF;
+    color: var(--text-primary);
+    transform: scale(1.05);
+}
+
+.hero-info {
+    margin-top: 40px;
+    display: inline-block; 
+    color: #FFFFFF;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+.hero-info span {
+    margin: 0 15px;
+}
+/* div qiyshiq */
+
+.horizontal-scroll-container {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: var(--accent-color);
+    overflow: hidden;
+  }
+
+  .scroll-content {
+    white-space: nowrap;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+    display: flex;
+    gap: 50px;
+    padding-left: 100px; 
+    will-change: transform;
+  }
+
+  .scroll-content span {
+    display: inline-block;
+  }
+
+  /* Custom Scrollbar */
+  #myScrollbar {
+    display: none;
+  }
+
+  #scrollbarThumb {
+    display: none;
+  }
+
+/* ===== UMUMIY SEKSIYA STILARI ===== */
+.info-section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+/* Scroll Animatsiyasi */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ===== NEGA BIZ? (FEATURES) ===== */
+.why-choose-us {
+    padding: 80px 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1400px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+
+  .why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 2px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #ff6b6b, #4ecdc4);
+    transition: width 0.4s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .feature-card:hover::before {
+    width: 100%;
+    opacity: 0.1;
+  }
+
+  .feature-card p {
+    font-size: 1.1rem;
+    color: #444;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease;
+  }
+
+  .feature-card:hover p {
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  /* Icon-like decorative element */
+  .feature-card::after {
+    content: '✓';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #4ecdc4;
+    opacity: 0;
+    transition: all 0.4s ease;
+    font-weight: bold;
+  }
+
+  .feature-card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+/* ===== XIZMATLAR (SERVICES) - RASMLAR BILAN ===== */
+.services-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border: var(--card-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column; /* Mobil qurilmalar uchun ustma-ust */
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-color);
+}
+
+.service-image {
+    width: 100%;
+    height: 250px; /* Rasm uchun aniq balandlik (mobil) */
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rasm sig'ishi uchun */
+    display: block;
+}
+
+.service-content {
+    padding: 40px;
+    flex-grow: 1;
+}
+
+.service-content h3 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.service-content p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.service-btn {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.service-btn:hover {
+    letter-spacing: 1px;
+    color: var(--accent-color-hover);
+}
+
+
+/* ===== HAYDOVCHILAR UCHUN (DRIVERS) ===== */
+#drivers {
+    background-color: var(--bg-card); /* Oq fonda */
+    border-top: var(--card-border);
+    border-bottom: var(--card-border);
+}
+
+.driver-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .driver-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid #f0f0f0;
+  }
+
+  .driver-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .driver-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .driver-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+  }
+
+  .driver-card h3 {
+    font-size: 1.8rem;
+    margin: 30px 0 12px;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .driver-card .intro {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 0 25px;
+  }
+
+  .driver-card ul {
+    list-style: none;
+    text-align: left;
+    padding: 0 35px 25px;
+    font-size: 1.05rem;
+    color: #444;
+  }
+
+  .driver-card ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    transition: color 0.3s ease;
+  }
+
+  .driver-card ul li::before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.3rem;
+    color: #4ecdc4;
+    font-weight: bold;
+  }
+
+  .driver-card:hover ul li {
+    color: #1a1a1a;
+  }
+
+  /* Button */
+  .btn-primarys {
+    display: block;
+    width: calc(100% - 50px);
+    margin: 0 auto 25px;
+    padding: 14px 20px;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.3);
+  }
+
+  .btn-primarys:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.4);
+    background: var(--accent-color-hover);
+  }
+
+  .full-width {
+    width: calc(100% - 50px);
+  }
+
+/* ===== FOOTER ===== */
+.footer {
+    padding-top: 80px;
+    background: var(--bg-card);
+    border-top: var(--card-border);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col .logo, .footer-col h4 {
+    color: var(--text-primary);
+}
+
+.footer-col .logo {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer-col p, .footer-col ul li a, .footer-auth span {
+    color: var(--text-secondary);
+}
+
+.footer-col h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.footer-auth {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 25px 0;
+    border-top: var(--card-border);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ===== MOBIL MOSLASHUV (RESPONSIVE) ===== */
+
+/* Katta ekranlar uchun (Laptop/Desktop) */
+@media (min-width: 992px) {
+    .service-card {
+        flex-direction: row; /* Rasm va matnni yonma-yon qilish */
+    }
+    .service-image, .service-content {
+        flex-basis: 50%; /* Teng 50% dan bo'lish */
+    }
+    .service-image {
+        height: auto; /* Balandlikni avtomat qilish */
+    }
+    /* Ikkinchi kartochka uchun rasmni o'ngga o'tkazish */
+    .service-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .driver-options {
+        grid-template-columns: 1fr;
+    }
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 85px; 
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-light); /* Oq fon */
+        flex-direction: column;
+        padding-top: 50px;
+        gap: 40px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+    }
+
+
+    .why-choose-us {
+        padding: 60px 15px;
+        margin: 20px 15px;
+      }
+
+      .why-choose-us h2 {
+        font-size: 2.2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .feature-card {
+        padding: 25px 20px;
+      }
+    /* JavaScript uchun menyu animatsiyasi */
+    .menu-icon.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-icon.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-icon.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .driver-card h3 {
+        font-size: 1.6rem;
+      }
+
+      .driver-card ul {
+        padding: 0 25px 20px;
+        font-size: 1rem;
+      }
+
+      .btn-primarys {
+        padding: 12px 18px;
+        font-size: 1rem;
+      }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .hero-info span {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col p {
+        margin: 0 auto 15px auto;
+    }
+    .footer-auth {
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    .why-choose-us h2 {
+      font-size: 1.9rem;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+    }
+    .driver-card ul li {
+        font-size: 0.95rem;
+        padding-left: 25px;
+      }
+
+      .driver-card ul li::before {
+        font-size: 1.1rem;
+      }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
